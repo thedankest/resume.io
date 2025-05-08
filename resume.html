@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Haider Sabah Al-Maliki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f9f9f9; 
+            color: #1d1d1f; 
+        }
+
+        .a4-container {
+            width: 21cm;
+            max-width: 100%; 
+            min-height: 29.7cm; 
+            margin: 1rem auto; 
+            padding: 1.3cm; /* Slightly increased base padding */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); 
+            border: 1px solid #ebebeb; 
+            background-color: #ffffff; 
+        }
+
+        /* Header specific layout - 2 Columns */
+         .header-grid {
+            display: grid;
+            grid-template-columns: auto 1fr; 
+            gap: 1.5rem; 
+            align-items: center; 
+            margin-bottom: 1.5rem; 
+        }
+        .header-info { 
+             display: flex;
+             flex-direction: column;
+        }
+        .contact-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* Adjusted minmax */
+            gap: 0.25rem 1rem; /* Adjusted gap */
+            margin-top: 0.6rem; 
+            margin-bottom: 0.8rem; 
+        }
+
+
+        .icon-sm { font-size: 1.0rem; margin-right: 0.25rem; vertical-align: -0.125em; color: #8a8a8e; line-height: 1; } 
+        .icon-md { font-size: 1.2rem; margin-right: 0.4rem; color: #636366; line-height: 1; vertical-align: -0.15em;} 
+        .icon-lg { font-size: 1.4rem; margin-right: 0.5rem; color: #1d1d1f; line-height: 1; vertical-align: -0.2em;} 
+        
+        .section {
+            padding: 0.55rem 0; /* Adjusted padding */
+            margin-bottom: 0.75rem; /* Adjusted margin */
+            border-bottom: 1px solid #f2f2f7; 
+        }
+        .section:last-child {
+             border-bottom: none; 
+             margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem; 
+            font-weight: 600; 
+            margin-bottom: 0.55rem; /* Adjusted margin */
+            display: flex;
+            align-items: center;
+            color: #1d1d1f; 
+        }
+        
+        h1 { font-size: 2.2rem; font-weight: 800; color: #1d1d1f; margin-bottom: 0.1rem; line-height: 1.1;} 
+        h2 { /* Used for Section Titles now */ }
+        h3 { font-size: 0.95rem; font-weight: 600; color: #1d1d1f; margin-bottom: 0.05rem; } 
+        p, li, span { color: #3a3a3c; font-size: 0.85rem; line-height: 1.4; } 
+        strong, .font-semibold { font-weight: 600; color: #1d1d1f; }
+        
+        .text-muted { color: #8a8a8e; } 
+        .text-link { color: #007aff; text-decoration: none; } 
+        .text-link:hover { text-decoration: underline; }
+        .header-profile-text { font-size: 0.85rem; color: #636366; line-height: 1.45; } 
+
+        .logo { 
+            width: 1.6rem; 
+            height: 1.6rem; 
+            border-radius: 0.25rem; 
+            background-color: transparent; 
+            color: #8a8a8e; 
+            font-size: 0.4rem; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.4rem; 
+            vertical-align: middle;
+            object-fit: contain;
+            flex-shrink: 0;
+            border: none; 
+        }
+
+
+        .skill-group-title {
+            font-weight: 600; 
+            color: #3a3a3c; 
+            margin-bottom: 0.3rem; 
+            font-size: 0.8rem; 
+        }
+        .skill-tag, .date-tag { 
+            display: inline-flex; 
+            align-items: center;
+            padding: 0.1rem 0.4rem; 
+            border-radius: 0.25rem; 
+            font-size: 0.65rem; 
+            font-weight: 500; 
+            margin: 0.1rem; 
+            white-space: nowrap; 
+            background-color: #f2f2f7; 
+            color: #636366; 
+            border: none; 
+        }
+        .skill-level {
+            font-size: 0.6rem; 
+            color: #8a8a8e; 
+            margin-left: 0.2rem; 
+            font-style: normal; 
+        }
+
+        .language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem; 
+            padding: 0;
+            margin-top: 0.2rem;
+        }
+        .language-item {
+            display: flex;
+            align-items: center;
+            padding: 0.1rem 0; 
+            font-size: 0.8rem; 
+        }
+        .language-flag {
+            font-size: 0.9rem; 
+            margin-right: 0.3rem; 
+            line-height: 1;
+        }
+        .language-level-desc {
+            font-size: 0.75rem; 
+            color: #8a8a8e; 
+            margin-left: 0.3rem; 
+            font-style: normal; 
+        }
+        
+        ul.job-details, ul.education-details { 
+            list-style-type: none; 
+            padding-left: 1.1rem; 
+            margin-top: 0.2rem; 
+            font-size: 0.8rem; 
+            line-height: 1.4; /* Slightly increased line-height */
+        }
+        ul.job-details li, ul.education-details li { 
+            margin-bottom: 0.15rem; /* Slightly increased space */
+            position: relative;
+        }
+        ul.job-details li::before, ul.education-details li::before {
+            content: '•';
+            color: #c7c7cc; 
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em; 
+            position: absolute;
+            top: 0.08em; /* Adjusted vertical alignment */
+        }
+        
+        .item-header { 
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.15rem; 
+            flex-wrap: nowrap; 
+        }
+        .item-title-location { 
+             flex-grow: 1; 
+             margin-right: 0.4rem; 
+        }
+        .item-title-location h3 { margin-bottom: 0.05rem;}
+        .item-title-location p { font-size: 0.75rem; color: #8a8a8e; } 
+
+        .profile-img-container {
+             border: 1px solid #e5e5ea; 
+        }
+
+
+        @media print {
+            body { background-color: white !important; margin: 0; padding: 0; font-size: 7.5pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; } 
+            /* Keep print padding reasonable */
+            .a4-container { width: 100%; min-height: 0; margin: 0; padding: 0.8cm; box-shadow: none; border: none; } 
+            .no-print { display: none !important; }
+            .header-grid { grid-template-columns: auto 1fr; gap: 1cm; margin-bottom: 0.8cm; align-items: center;} 
+            .contact-grid { grid-template-columns: repeat(2, 1fr); gap: 0.15rem 0.8rem; margin-bottom: 0.6rem;} 
+            .section { border: none; border-bottom: 1px solid #eee; padding: 0.3rem 0; margin-bottom: 0.5rem; page-break-inside: avoid; background-color: #ffffff !important; } 
+            .section:last-child { border-bottom: none; margin-bottom: 0; }
+            .section-title { font-size: 9pt; margin-bottom: 0.3rem; } 
+            /* Ensure print font size and line height are not too small */
+            p, li, span { font-size: 7pt; line-height: 1.25; color: #000000 !important; } 
+            .header-profile-text { font-size: 7.5pt; line-height: 1.3;}
+            h1 { font-size: 18pt !important; font-weight: 700 !important; } 
+            h3 { font-size: 8pt !important; font-weight: 600 !important; } 
+            strong, .font-semibold { color: #000000 !important; font-weight: 600; }
+            a { color: #000000 !important; text-decoration: none !important; }
+            .profile-img-container { border: 1px solid #ccc !important; width: 2cm !important; height: 2cm !important;} 
+            .logo { width: 0.5cm !important; height: 0.5cm !important; border: none !important; background-color: transparent !important; } 
+            .skill-tag, .date-tag { background-color: #f0f0f0 !important; color: #333 !important; border: none !important; padding: 0.05rem 0.2rem; font-size: 6pt; border-radius: 0.2rem;}
+            .skill-level { font-size: 5.5pt; }
+            .language-list { gap: 0.3rem; } 
+            .language-item { font-size: 6.5pt; padding: 0.08rem 0;} 
+            .language-flag { font-size: 0.65rem; }
+            .language-level-desc { font-size: 6pt; }
+            ul.job-details, ul.education-details { font-size: 6.5pt; padding-left: 0.8em; line-height: 1.25; } /* Increased line-height */
+            ul.job-details li, ul.education-details li { margin-bottom: 0.1rem; } /* Increased space */
+            ul.job-details li::before, ul.education-details li::before { content: '•'; color: #777; margin-left: -0.9em; top: 0.08em; } /* Adjusted bullet */
+            .ti { color: black !important; font-size: inherit !important; } 
+            .text-base { font-size: 8pt !important; } 
+            .text-xs { font-size: 6.5pt !important; } 
+            .item-header { margin-bottom: 0.1rem !important; }
+            .education-list > li, .project-list > li { margin-bottom: 0.3rem !important; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-container">
+        
+        <header class="header-grid print:header-grid">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 profile-img-container overflow-hidden shrink-0">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQH2AyeF3yTFdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685023638606?e=1752105600&v=beta&t=iS2C21bk3xTJKaUsOVybiRsfZg76jcfoo9dDvj8zJiE" alt="Profilbild Haider Al-Maliki" class="w-full h-full object-cover">
+            </div>
+            <div class="header-info">
+                <h1>Haider Sabah Al-Maliki</h1>
+                <p class="text-base text-muted print:text-sm mb-2">International Business Graduate | M&A, Product & Strategy</p>
+                
+                <div class="contact-grid print:contact-grid">
+                    <p class="flex items-center text-xs text-muted print:text-[7pt]">
+                        <i class="ti ti-map-pin icon-sm"></i>
+                        Mönchengladbach, NRW
+                    </p>
+                    <p class="flex items-center text-xs text-muted print:text-[7pt]">
+                        <i class="ti ti-mail icon-sm"></i>
+                        <a href="mailto:haider.al-m@web.de" class="text-link">haider.al-m@web.de</a>
+                    </p>
+                    <p class="flex items-center text-xs text-muted print:text-[7pt]">
+                         <i class="ti ti-phone icon-sm"></i>
+                        +49 176 31733276
+                    </p>
+                    <p class="flex items-center text-xs text-muted print:text-[7pt]">
+                         <i class="ti ti-brand-linkedin icon-sm"></i>
+                        <a href="https://www.linkedin.com/in/haider-al-maliki-808523205" target="_blank" rel="noopener noreferrer" class="text-link">/in/haider-al-maliki-808523205</a>
+                    </p>
+                </div>
+                
+                <p class="header-profile-text print:text-xs print:leading-snug">
+                    International Business Absolvent mit Erfahrung in M&A, Projektarbeit & agilem Produktmanagement (Automotive, Finanzen, Tech). Analytisch, datengetrieben & lösungsorientiert. Passioniert für Innovation, digitale Transformation & Strategie.
+                </p>
+             </div>
+        </header>
+
+        
+        <section class="section">
+            <h2 class="section-title">
+                 <i class="ti ti-briefcase icon-md"></i>
+                Berufserfahrung
+            </h2>
+            <ul class="space-y-3 print:space-y-1"> 
+                <li>
+                    <div class="item-header">
+                         <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHBsE6Wm2mmsA/company-logo_200_200/company-logo_200_200/0/1680256446018/webpros_logo?e=2147483647&v=beta&t=s7uFjJkw0QgB--9ZuUOC45bSeAzeIWAacgwFyGLByVw" alt="WebPros Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>WP</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Mergers and Acquisitions Intern</h3>
+                            <p>WebPros | Köln</p>
+                        </div>
+                        <span class="date-tag">09/'24 - Heute</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Identifizierung potenzieller Akquisitionsziele durch Marktforschung & strategische Analyse.</li>
+                        <li>Management der Deal-Origination & Pflege der Deal-Pipeline.</li>
+                        <li>Durchführung von Anbietermeetings zur Auswahl von Tools zur Effizienzsteigerung im M&A.</li>
+                        <li>Direkte Berichterstattung an C-Level (M&A Taskforce); Optimierung von Screening-Prozessen.</li>
+                    </ul>
+                </li>
+                <li>
+                     <div class="item-header">
+                        <img src="https://friconix.com/png/fi-snsuxl-mercedes.png" alt="Mercedes-Benz Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>MB</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Intern Product- and Process Management</h3>
+                            <p>Mercedes-Benz AG | Maastricht, NL (On-site)</p>
+                        </div>
+                        <span class="date-tag">02/'24 - 06/'24</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Federführung bei Prozessmodellierung & -optimierung zur Steigerung der Effizienz.</li>
+                        <li>Entwicklung von CRM-Systemfunktionen, Abstimmung technischer Lösungen mit Business Impacts.</li>
+                        <li>Vorschlag einer Service-Portfolio-Management-Datenbank zur Kollaborationsförderung.</li>
+                        <li>Verfeinerung von Produktbetriebsmodellen durch Primär- & Sekundärforschung.</li>
+                        <li>Erstellung von Präsentationen für internationale Stakeholder.</li>
+                    </ul>
+                </li>
+                 <li>
+                     <div class="item-header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9kc-SHF6U2i2c7MPqNM7om_aRbLXulJ1kX4Cm6W2s-ZrYEmjC32w1KG9YOr93ow2lH50&usqp=CAU" alt="Santander Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>SC</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Working Student D4C & Mobility</h3>
+                            <p>Santander Deutschland | Mönchengladbach (On-site)</p>
+                        </div>
+                         <span class="date-tag">09/'23 - 02/'24</span>
+                    </div>
+                     <ul class="job-details">
+                        <li>Bearbeitung von Kundenanfragen (Automobilfinanzierung/-leasing).</li>
+                        <li>Verifizierung von Dokumenten & Prüfung der Berechtigung für Finanzdienstleistungen.</li>
+                        <li>Erstellung von Berichten für interne Stakeholder zur Geschäftsanalyse.</li>
+                    </ul>
+                </li>
+                <li>
+                     <div class="item-header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Polestar_logo_2020.svg/1200px-Polestar_logo_2020.svg.png" alt="Polestar Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>PS</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Space Specialist</h3>
+                            <p>Polestar | Amsterdam, NL</p>
+                        </div>
+                         <span class="date-tag">03/'23 - 07/'23</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Entwicklung von Produktwissen-Expertise; Fachexperte für Kunden & Kollegen.</li>
+                        <li>Durchführung von Produktdemonstrationen; Unterstützung im Verkaufsprozess.</li>
+                    </ul>
+                </li>
+                <li> 
+                     <div class="item-header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Polestar_logo_2020.svg/1200px-Polestar_logo_2020.svg.png" alt="Polestar Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>PS</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Competence Development and Product Intern</h3>
+                            <p>Polestar | Köln</p>
+                        </div>
+                         <span class="date-tag">08/'22 - 02/'23</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Marktstudien zu Kundenbedürfnissen, Trends & Wettbewerb; Produktprognosen.</li>
+                        <li>Organisation & Durchführung nationaler Webinare zur globalen Produkteinführung.</li>
+                        <li>Entwicklung & Analyse von KPIs für interne Schulungskampagnen; Ergebnispräsentation.</li>
+                    </ul>
+                </li>
+                 <li>
+                     <div class="item-header">
+                         <img src="https://www.xing.com/imagecache/public/scaled_original_image/eyJ1dWlkIjoiNjc0YzA3MmYtYmMwNC00NDJhLTg5NDQtN2U0MWM4NGU4OGU5IiwiYXBwX2NvbnRleHQiOiJlbnRpdHktcGFnZXMiLCJtYXhfd2lkdGgiOjMyMCwibWF4X2hlaWdodCI6MzIwfQ?signature=496e73b874e63f20a7840ef19494e34dca1d39a62b8f6cf1e500b8d7266e2400" alt="Milliarium Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>M</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Working Student Marketing</h3>
+                            <p>Milliarium GmbH & Co. KG | Mönchengladbach</p>
+                        </div>
+                         <span class="date-tag">04/'22 - 07/'22</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Erstellung von Marketing- & Schulungsmaterial für SAP-Produkte.</li>
+                        <li>Pflege der Firmenwebsite (Wordpress) & LinkedIn-Seite; Versand von Newslettern.</li>
+                        <li>Implementierung einer Content-Marketing-Strategie zur Steigerung der Impressionen.</li>
+                    </ul>
+                </li>
+                 <li>
+                     <div class="item-header">
+                        <img src="https://www.bpb.de/cache/images/3/153583_original.jpg?82CDD" alt="Multikulturelles Forum Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>MF</span>')">
+                        <div class="item-title-location">
+                            <h3 class="font-semibold">Academic Counselor and Tutor</h3>
+                            <p>Multikulturelles Forum e.V. | Düsseldorf</p>
+                        </div>
+                         <span class="date-tag">06/'21 - 01/'22</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Entwicklung & Implementierung von Lernstrategien für erwachsene Geflüchtete.</li>
+                        <li>Vermittlung von Kenntnissen & Fähigkeiten für Bildung & Beruf; individuelle Beratung.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 print:grid-cols-2 print:gap-x-3">
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="ti ti-school icon-md"></i>
+                    Ausbildung
+                </h2>
+                <ul class="space-y-3 education-list print:space-y-1"> 
+                    <li>
+                         <div class="item-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Logo_of_Fontys_University_of_Applied_Sciences.png" alt="Fontys Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>FV</span>')">
+                            <div class="item-title-location">
+                                <h3 class="font-semibold">Bachelor (BBA), International Business</h3>
+                                <p>Fontys Venlo University | Venlo, NL</p>
+                            </div>
+                             <span class="date-tag">09/'20 - 03/'25</span> 
+                        </div>
+                        <ul class="education-details">
+                            <li>Minor: Business Psychology & Consumer Behavior (GPA 2,0).</li>
+                            <li>Projektbasierte strategische Beratung.</li>
+                            <li>Kurse: Finanzen, SCM, Marketing, BI, Wirtschaftsforschung.</li>
+                        </ul>
+                    </li>
+                    <li>
+                         <div class="item-header">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEpWTpj3BXfcjcXvECVP5WOBCAQqDNqbNdyQ&s" alt="AUAS Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>AUAS</span>')">
+                            <div class="item-title-location">
+                                <h3 class="font-semibold">Minor, Global Trendwatching</h3>
+                                <p>Amsterdam Univ. of Applied Sciences | Amsterdam, NL</p>
+                            </div>
+                             <span class="date-tag">02/'23 - 07/'23</span> 
+                        </div>
+                        <ul class="education-details">
+                            <li>Detaillierte Trendanalysen (Tech, Konsumverhalten, Nachhaltigkeit).</li>
+                        </ul>
+                    </li>
+                    <li>
+                         <div class="item-header">
+                            <img src="https://gymnasium-odenkirchen.de/wordpress/wp-content/uploads/Logo_GO-ohne-text-gross-820x659.jpg" alt="Gymnasium Odenkirchen Logo" class="logo" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<span class=logo>GO</span>')">
+                            <div class="item-title-location">
+                                <h3 class="font-semibold">Abitur</h3>
+                                <p>Gymnasium Odenkirchen | Mönchengladbach</p>
+                            </div>
+                             <span class="date-tag">07/'20</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="ti ti-flask icon-md"></i>
+                    Projekte
+                </h2>
+                <ul class="space-y-3 project-list print:space-y-1"> 
+                     <li>
+                         <div class="item-header">
+                            <div class="item-title-location">
+                                <h3 class="font-semibold text-gray-700 text-sm">The Green Mile Sustainability Project</h3>
+                                <p class="text-xs text-muted">AUAS</p>
+                            </div>
+                             <span class="date-tag">04/'23 - 07/'23</span>
+                        </div>
+                        <ul class="job-details">
+                            <li>Erforschung ökologischer/sozialer Auswirkungen von Stadtentwicklung.</li>
+                            <li>Entwicklung trendbasierter Lösungen zur Verbesserung der Lebensqualität.</li>
+                            <li>Kollaboration mit Stakeholdern (Nationalbank, Heineken, Stadtrat).</li>
+                        </ul>
+                    </li>
+                    <li>
+                         <div class="item-header">
+                             <div class="item-title-location">
+                                <h3 class="font-semibold text-gray-700 text-sm">Ravensburger Communication Strategy</h3>
+                                <p class="text-xs text-muted">Ravensburger</p>
+                            </div>
+                             <span class="date-tag">04/'23 - 06/'23</span>
+                        </div>
+                        <ul class="job-details">
+                            <li>Entwicklung trendgetriebener Kommunikationsstrategie (Blended Experiences, KI).</li>
+                             <li>Austausch mit SRH Berlin (Master Strategic Design).</li>
+                             <li>Zusammenarbeit mit 50+ Studenten & Dozenten.</li>
+                        </ul>
+                    </li>
+                     
+                </ul>
+            </section>
+        </div>
+
+
+        <section class="section">
+            <h2 class="section-title">
+                <i class="ti ti-tools icon-lg"></i>
+                Kenntnisse & Fähigkeiten
+            </h2>
+            <div class="space-y-3 print:space-y-1"> 
+                <div>
+                    <h3 class="skill-group-title flex items-center">
+                        <i class="ti ti-brain icon-sm"></i>
+                        Fachkenntnisse
+                    </h3>
+                    <div class="flex flex-wrap -m-1">
+                        <span class="skill-tag">M&A (Strategie, Analyse)</span><span class="skill-tag">Marktforschung</span>
+                        <span class="skill-tag">Business Intelligence (BI)</span><span class="skill-tag">Corporate Finance</span>
+                        <span class="skill-tag">Projektmanagement</span><span class="skill-tag">Produktmanagement</span>
+                        <span class="skill-tag">Trendanalyse</span><span class="skill-tag">ESG</span>
+                        <span class="skill-tag">Prozessoptimierung</span><span class="skill-tag">CRM-Systeme</span>
+                        <span class="skill-tag">Data Analysis</span><span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Scrum</span><span class="skill-tag">Lean Management</span>
+                        <span class="skill-tag">SAFe</span><span class="skill-tag">Six Sigma</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="skill-group-title flex items-center">
+                         <i class="ti ti-device-desktop-code icon-sm"></i>
+                        Technologie & Tools
+                    </h3>
+                    <div class="flex flex-wrap -m-1">
+                        <span class="skill-tag">MS Excel <span class="skill-level">(Fortgeschr.)</span></span>
+                        <span class="skill-tag">MS PowerPoint <span class="skill-level">(Fortgeschr.)</span></span>
+                        <span class="skill-tag">Automation <span class="skill-level">(Fortgeschr.)</span></span>
+                        <span class="skill-tag">Adobe Illustrator <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">Adobe Photoshop <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">Adobe Premiere <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">PowerBI <span class="skill-level">(Grundl.)</span></span> 
+                        <span class="skill-tag">PowerApps <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">JavaScript <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">SQL <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">HTML/CSS <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">Linux <span class="skill-level">(Grundl.)</span></span>
+                        <span class="skill-tag">Wordpress <span class="skill-level">(Grundl.)</span></span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="skill-group-title flex items-center">
+                        <i class="ti ti-language icon-sm"></i>
+                        Sprachen
+                    </h3>
+                    <div class="language-list">
+                        <div class="language-item"><span class="language-flag">🇩🇪</span> Deutsch <span class="language-level-desc">Muttersprache</span></div>
+                        <div class="language-item"><span class="language-flag">🇮🇶</span> Arabisch <span class="language-level-desc">Muttersprache</span></div>
+                        <div class="language-item"><span class="language-flag">🇬🇧</span> Englisch <span class="language-level-desc">Verhandlungssicher (C2)</span></div>
+                        <div class="language-item"><span class="language-flag">🇪🇸</span> Spanisch <span class="language-level-desc">B1 Niveau</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-3 print:mt-1">
+            <p class="text-xs text-muted no-print">Erstellt mit HTML & Tailwind CSS. Icons von Tabler Icons.</p>
+        </footer>
+
+    </div>
+    
+</body>
+</html>
